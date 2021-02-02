@@ -167,7 +167,7 @@ public class Recibidos extends Fragment {
                 adapter = new AdaptadorMensajes(listaMensajes, getActivity(), id);
                 rv.setAdapter(adapter);
                 adapter.notifyDataSetChanged();
-                notificaciones();
+                notificaciones(root);
             }
 
             @Override
@@ -183,29 +183,33 @@ public class Recibidos extends Fragment {
         activityX = (MainActivity) context;
     }
 
-    public void notificaciones() {
+    public void notificaciones(View root) {
 
-        NotificationManager mNotificationManager = (NotificationManager) getContext().getSystemService(getContext().getApplicationContext().NOTIFICATION_SERVICE);
-        if (Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-            CharSequence name = "Email";
+        try {
+            NotificationManager mNotificationManager = (NotificationManager) getContext().getSystemService(getContext().getApplicationContext().NOTIFICATION_SERVICE);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                CharSequence name = "Email";
 
-            String descripcion = "Comunicacion de email al usuario";
-            int importance = NotificationManager.IMPORTANCE_HIGH;
+                String descripcion = "Comunicacion de email al usuario";
+                int importance = NotificationManager.IMPORTANCE_HIGH;
 
-            NotificationChannel mChannel = new NotificationChannel(channelId, name, importance);
+                NotificationChannel mChannel = new NotificationChannel(channelId, name, importance);
 
-            mChannel.setDescription(descripcion);
-            mChannel.enableLights(true);
-            mChannel.setLightColor(Color.RED);
-            mChannel.enableVibration(true);
-            mNotificationManager.createNotificationChannel(mChannel);
+                mChannel.setDescription(descripcion);
+                mChannel.enableLights(true);
+                mChannel.setLightColor(Color.RED);
+                mChannel.enableVibration(true);
+                mNotificationManager.createNotificationChannel(mChannel);
 
-            mBUilder = new NotificationCompat.Builder(getContext(), channelId);
+                mBUilder = new NotificationCompat.Builder(getContext(), channelId);
+
+            }
+
+            mBUilder.setSmallIcon(R.drawable.gmail).setContentTitle("Email").setContentText("Tienes un nuevo email");
+            mNotificationManager.notify(mNotificacionId, mBUilder.build());
+        } catch (Exception e) {
 
         }
-
-        mBUilder.setSmallIcon(R.drawable.gmail).setContentTitle("Email").setContentText("Tienes un nuevo email");
-        mNotificationManager.notify(mNotificacionId,mBUilder.build());
 
 
     }
