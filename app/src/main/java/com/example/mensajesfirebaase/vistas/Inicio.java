@@ -32,6 +32,7 @@ import com.google.firebase.auth.GoogleAuthProvider;
 
 public class Inicio extends Fragment {
 
+
     private FirebaseAuth firebaseAuth;
     private ImageButton bGoogle;
     private Button bLogin, bCrear;
@@ -156,7 +157,7 @@ public class Inicio extends Fragment {
     private void firebaseAuthWithGoogle(GoogleSignInAccount account) {
         AuthCredential credential = GoogleAuthProvider.getCredential(account.getIdToken(), null);
         firebaseAuth.signInWithCredential(credential)
-                .addOnCompleteListener( new OnCompleteListener() {
+                .addOnCompleteListener(new OnCompleteListener() {
                     @Override
                     public void onComplete(@NonNull Task task) {
                         if (task.isSuccessful()) {
@@ -164,7 +165,7 @@ public class Inicio extends Fragment {
                             Navigation.findNavController(getView()).navigate(R.id.action_inicio_to_nav_home);
 
                         } else {
-                            Toast.makeText(getContext(),"Fallido",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getContext(), "Fallido", Toast.LENGTH_SHORT).show();
                         }
                     }
 
@@ -172,3 +173,4 @@ public class Inicio extends Fragment {
                 });
     }
 }
+

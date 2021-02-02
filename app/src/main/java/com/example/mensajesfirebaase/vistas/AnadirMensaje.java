@@ -191,8 +191,7 @@ public class AnadirMensaje extends Fragment {
                 adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 sp.setAdapter(adapter);
                 adapter.notifyDataSetChanged();
-                if(usuarios.size()==0){
-                    Toast.makeText(getContext(),"No hay usuarios a los que enviar email",Toast.LENGTH_LONG).show();
+                if (usuarios.size() == 0) {
                     Navigation.findNavController(getView()).navigate(R.id.action_nav_slideshow_to_nav_home);
                 }
 

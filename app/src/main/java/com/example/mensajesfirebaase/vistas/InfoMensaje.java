@@ -19,7 +19,7 @@ public class InfoMensaje extends Fragment {
     TextView tDe, Asunto, contenido;
     ImageView imagen;
     Mensajes mensa;
-    int id=0;
+    int id = 0;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -27,7 +27,6 @@ public class InfoMensaje extends Fragment {
         if (getArguments() != null) {
             mensa = (Mensajes) getArguments().getSerializable("Mensaje");
             id = getArguments().getInt("id");
-            Toast.makeText(getContext(),"ID "+id,Toast.LENGTH_SHORT).show();
         }
 
 
@@ -35,21 +34,18 @@ public class InfoMensaje extends Fragment {
 
     private void mostrarDatos(int id) {
         if (id == 0) {
-           Glide.with(getContext())
-                    .load(mensa.getImagenUsuarioRecibido())
-                    .into(imagen);
-
-            tDe.setText(mensa.getDe());
-            //Asunto.setText(mensa.getAsunto());
-            contenido.setText("" + mensa.getContenido());
-
-            Toast.makeText(getContext(),"HOLA",Toast.LENGTH_SHORT).show();
-        } else {
             Glide.with(getContext())
                     .load(mensa.getImagenUsuarioEnviado())
                     .into(imagen);
             tDe.setText(mensa.getPara());
-            //Asunto.setText(mensa.getAsunto());
+            contenido.setText("" + mensa.getContenido());
+        } else {
+            Glide.with(getContext())
+                    .load(mensa.getImagenUsuarioRecibido())
+                    .into(imagen);
+
+            tDe.setText(mensa.getDe());
+
             contenido.setText("" + mensa.getContenido());
         }
     }
@@ -62,8 +58,6 @@ public class InfoMensaje extends Fragment {
         tDe = root.findViewById(R.id.textDe);
         contenido = root.findViewById(R.id.para);
         imagen = root.findViewById(R.id.autor);
-
-       // Toast.makeText(getContext(),"ID "+getId(),Toast.LENGTH_SHORT).show();
 
         mostrarDatos(id);
 

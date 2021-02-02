@@ -44,22 +44,24 @@ public class AdaptadorMensajes extends RecyclerView.Adapter<AdaptadorMensajes.Ad
         Mensajes mensaje = listaEnviados.get(position);
 
         holder.asunto.setText(mensaje.getAsunto());
-       // holder.Contenido.setText(mensaje.getContenido());
+        // holder.Contenido.setText(mensaje.getContenido());
         //
 
 
-        if (id == 2131230997) {
-            holder.deQuienEs.setText(mensaje.getPara());
-            holder.Para.setText(mensaje.getDe());
-            Glide.with(holder.itemView)
-                    .load(mensaje.getImagenUsuarioEnviado())
-                    .into(holder.imagen);
-        } else {
+        if (id == 2131231035) {
             holder.deQuienEs.setText(mensaje.getDe());
             holder.Para.setText(mensaje.getPara());
             Glide.with(holder.itemView)
                     .load(mensaje.getImagenUsuarioRecibido())
                     .into(holder.imagen);
+        } else {
+
+            holder.deQuienEs.setText(mensaje.getPara());
+            holder.Para.setText(mensaje.getDe());
+            Glide.with(holder.itemView)
+                    .load(mensaje.getImagenUsuarioEnviado())
+                    .into(holder.imagen);
+
 
         }
 
@@ -70,12 +72,13 @@ public class AdaptadorMensajes extends RecyclerView.Adapter<AdaptadorMensajes.Ad
                 Bundle b = new Bundle();
                 b.putSerializable("Mensaje", mensaje);
 
-               if(id==2131230899){
-                   b.putSerializable("id", 1);
-                    Navigation.findNavController(v).navigate(R.id.action_nav_gallery_to_infoMensaje, b);
-                }else{
-                   b.putSerializable("id",0 );
+                if (id == 2131231035) {
+                    b.putSerializable("id", 1);
                     Navigation.findNavController(v).navigate(R.id.action_nav_home_to_infoMensaje, b);
+                } else {
+                    b.putSerializable("id", 0);
+
+                    Navigation.findNavController(v).navigate(R.id.action_nav_gallery_to_infoMensaje, b);
                 }
 
 

@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -42,10 +43,8 @@ public class Enviados extends Fragment {
         cargarEnviados();
 
         rv = root.findViewById(R.id.rvEnviados);
-        //Toast.makeText(getContext(),""+root.getContext(),Toast.LENGTH_SHORT).show();
-        //Toast.makeText(getContext(), "" + this.getId(), Toast.LENGTH_SHORT).show();
         id = root.getId();
-        //Toast.makeText(getContext(), "" + id, Toast.LENGTH_SHORT).show();
+
         return root;
     }
 

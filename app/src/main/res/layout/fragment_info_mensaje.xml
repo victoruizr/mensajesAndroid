@@ -23,8 +23,8 @@
             android:layout_width="89dp"
             android:layout_height="94dp"
             android:layout_centerInParent="true"
-            android:layout_margin="16dp"
-            android:layout_marginStart="24dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="50dp"
             android:foregroundGravity="center"
             app:cardCornerRadius="160dp"
             app:cardElevation="16dp"
@@ -50,10 +50,10 @@
 
                 <TextView
                     android:id="@+id/textDe"
-                    android:layout_width="260dp"
-                    android:layout_height="wrap_content"
+                    android:layout_width="259dp"
+                    android:layout_height="62dp"
                     android:layout_marginStart="24dp"
-                    android:layout_marginTop="50dp"
+                    android:layout_marginTop="75dp"
                     android:layout_marginBottom="60dp"
                     android:text="TextView"
                     android:textSize="24sp" />
@@ -67,7 +67,7 @@
     <TextView
         android:id="@+id/para"
         android:layout_width="411dp"
-        android:layout_height="570dp"
+        android:layout_height="529dp"
         android:text="TextView"
         android:textAlignment="center"
         android:textColor="@color/black"

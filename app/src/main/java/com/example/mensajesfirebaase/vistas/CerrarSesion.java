@@ -29,7 +29,6 @@ public class CerrarSesion extends Fragment {
         super.onCreate(savedInstanceState);
 
 
-
     }
 
 

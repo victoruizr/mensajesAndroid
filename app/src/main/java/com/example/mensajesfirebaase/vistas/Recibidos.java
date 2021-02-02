@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -59,7 +60,7 @@ public class Recibidos extends Fragment {
 
         firebaseAuth = FirebaseAuth.getInstance();
         database = FirebaseDatabase.getInstance().getReference();
-
+        ((AppCompatActivity) getActivity()).getSupportActionBar().show();
 
         try {
 
@@ -77,9 +78,6 @@ public class Recibidos extends Fragment {
         } catch (Exception e) {
 
         }
-
-        //Toast.makeText(getContext(), "El id es " + this.getId(), Toast.LENGTH_SHORT).show();
-
 
         return root;
     }
@@ -173,11 +171,6 @@ public class Recibidos extends Fragment {
             }
         });
     }
-
-    private void notificaciones() {
-
-    }
-
 
     @Override
     public void onAttach(@NonNull Context context) {
