@@ -1,7 +1,12 @@
 package com.example.mensajesfirebaase.vistas;
 
 import android.app.AlertDialog;
+import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.Context;
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -44,11 +49,11 @@ public class Recibidos extends Fragment {
     private RecyclerView rv;
     private int id;
     private RecyclerView.Adapter adapter;
-    NotificationCompat.Builder notificacion;
     String photoURl;
-    AlertDialog dialog;
-    int idNotificacion = 12343543;
     private String provider;
+    NotificationCompat.Builder mBUilder;
+    int mNotificacionId = 1;
+    String channelId = "my_channel_01";
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
@@ -162,7 +167,7 @@ public class Recibidos extends Fragment {
                 adapter = new AdaptadorMensajes(listaMensajes, getActivity(), id);
                 rv.setAdapter(adapter);
                 adapter.notifyDataSetChanged();
-                Toast.makeText(root.getContext(), "Nuevo email", Toast.LENGTH_SHORT).show();
+                notificaciones();
             }
 
             @Override
@@ -176,6 +181,33 @@ public class Recibidos extends Fragment {
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
         activityX = (MainActivity) context;
+    }
+
+    public void notificaciones() {
+
+        NotificationManager mNotificationManager = (NotificationManager) getContext().getSystemService(getContext().getApplicationContext().NOTIFICATION_SERVICE);
+        if (Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            CharSequence name = "Email";
+
+            String descripcion = "Comunicacion de email al usuario";
+            int importance = NotificationManager.IMPORTANCE_HIGH;
+
+            NotificationChannel mChannel = new NotificationChannel(channelId, name, importance);
+
+            mChannel.setDescription(descripcion);
+            mChannel.enableLights(true);
+            mChannel.setLightColor(Color.RED);
+            mChannel.enableVibration(true);
+            mNotificationManager.createNotificationChannel(mChannel);
+
+            mBUilder = new NotificationCompat.Builder(getContext(), channelId);
+
+        }
+
+        mBUilder.setSmallIcon(R.drawable.gmail).setContentTitle("Email").setContentText("Tienes un nuevo email");
+        mNotificationManager.notify(mNotificacionId,mBUilder.build());
+
+
     }
 
 }
