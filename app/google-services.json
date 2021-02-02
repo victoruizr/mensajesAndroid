@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "964913669726",
+    "project_id": "mensajesfirebase-90e5a",
+    "storage_bucket": "mensajesfirebase-90e5a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:964913669726:android:f45d68a97320f9e988b6cf",
+        "android_client_info": {
+          "package_name": "com.example.mennnsajes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "964913669726-lrsm7m5auscca1v3p3dp0f2iti3fmf29.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAGy9hC39UILgjEV4T8YWNSH6qdvEwjmWM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "964913669726-lrsm7m5auscca1v3p3dp0f2iti3fmf29.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:964913669726:android:54a2d92435f5708388b6cf",
+        "android_client_info": {
+          "package_name": "com.example.mensajesfirebaase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "964913669726-lrsm7m5auscca1v3p3dp0f2iti3fmf29.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAGy9hC39UILgjEV4T8YWNSH6qdvEwjmWM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "964913669726-lrsm7m5auscca1v3p3dp0f2iti3fmf29.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

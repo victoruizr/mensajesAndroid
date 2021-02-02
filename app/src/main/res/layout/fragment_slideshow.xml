@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context=".vistas.AnadirMensaje">
+
+    <EditText
+        android:id="@+id/editTextTextPersonName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:editable="false"
+        android:ems="10"
+        android:enabled="false"
+        android:hint="De"
+        android:inputType="textPersonName" />
+
+    <Spinner
+        android:id="@+id/spinnerUsuarios"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:ems="10"
+        android:hint="Asunto"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/editTextTextMultiLine"
+        android:layout_width="match_parent"
+        android:layout_height="285dp"
+        android:layout_weight="1"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="Contenido"
+        android:inputType="textMultiLine" />
+
+    <Button
+        android:id="@+id/buttonEnviar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Enviar" />
+</LinearLayout>
