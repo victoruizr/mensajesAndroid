@@ -10,6 +10,8 @@ import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.mensajesfirebaase.R;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -43,15 +45,13 @@ public class CerrarSesion extends Fragment {
         firebaseAuth = FirebaseAuth.getInstance();
         database = FirebaseDatabase.getInstance().getReference();
         firebaseAuth.signOut();
+        GoogleSignIn.getClient(
+                getContext(),
+                new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).build()
+        ).signOut();
         navController = NavHostFragment.findNavController(this);
         navController.navigate(R.id.action_cerrarSesion_to_inicio);
         return v;
 
     }
-
-    public void cerrarSesion() {
-
-    }
-
-
 }
